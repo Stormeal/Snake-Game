@@ -1,4 +1,4 @@
-# snake-game
+# Snake Game (Code Challenge)
 
 ## Project setup
 ```
