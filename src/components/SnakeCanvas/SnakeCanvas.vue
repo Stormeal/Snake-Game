@@ -26,6 +26,6 @@ export default {
 <style scoped>
 #snake-canvas {
   border: 1px solid #ccc;
-  background-color: aqua;
+  margin: 10px 0;
 }
 </style>
