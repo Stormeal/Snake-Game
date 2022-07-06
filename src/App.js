@@ -1,9 +1,11 @@
-import SnakeCanvas from "./components/SnakeCanvas"
+import SnakeCanvas from "./components/SnakeCanvas/SnakeCanvas.vue"
+import TestComponent from "./components/Test/TestComponent.vue"
 
 export default {
   name: 'App',
   components: {
-    SnakeCanvas
+    SnakeCanvas,
+    TestComponent
   },
   data() {
     return {
