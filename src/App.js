@@ -10,8 +10,10 @@ export default {
   data() {
     return {
       cellSize: 10,
-      boardSize: 5,
-      speed: 1,
+      boardSize: 20,
+      speed: 10,
+      scores: 0,
+      isPlaying: false
     }
   }
 }

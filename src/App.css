@@ -34,3 +34,11 @@ body {
     line-height: 20px;
 
 }
+
+#play-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 10px;
+}

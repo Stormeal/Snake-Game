@@ -14,8 +14,16 @@
       Speed (Default 1):
       <input type="number" min="1" v-model.number="speed" />
     </div>
-    <br>
-    <SnakeCanvas :cellSize="cellSize" :boardSize="boardSize" :speed="speed" ></SnakeCanvas>
+    <br />
+    <SnakeCanvas
+      :cellSize="cellSize"
+      :boardSize="boardSize"
+      :speed="speed"
+    ></SnakeCanvas>
+    <div>Scores: {{ scores || 0 }}</div>
+    <button id="play-btn">
+      {{ isPlaying ? "Stop" : "Play"}}
+    </button>
   </div>
 </template>
 
