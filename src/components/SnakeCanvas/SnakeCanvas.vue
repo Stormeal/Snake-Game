@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import constants from "./constants";
+
 export default {
   name: "SnakeCanvas",
   props: {
@@ -29,12 +31,12 @@ export default {
   },
   watch: {
     isPlaying(value) {
-      console.log(value);
+      console.log("Watch: ",value);
       // Subscribes to the value of isPlaying.
       // Used for managing of game state.
       if (value) {
         this.resetSnake();
-        this.snakeMovement();
+        this.move();
       }
     },
   },
@@ -46,13 +48,37 @@ export default {
           y: this.getMiddleCell(),
         },
       ];
+      // TODO: Add random direction
+      this.direction = constants[0];
     },
     getMiddleCell() {
       // Use this method in order to get the center cell of the canvas.
       return Math.round(this.boardSize / 2);
     },
-    snakeMovement() {
+    move() {
+      if (!this.isPlaying) {
+        return;
+      }
+
+      this.clear();
+      // Creates a new cell head based on the movement direction
+      const newHeadCell = {
+        x: this.snake[0].x + this.direction.move.x,
+        y: this.snake[0].y + this.direction.move.y
+      };
+
+      // Incerts new cell into the start of the array
+      this.snake.unshift(newHeadCell);
+      this.snake.pop();
+
+      this.boardContext.beginPath();
       this.snake.forEach(this.drawCell);
+      this.boardContext.closePath();
+
+      setTimeout(this.move, this.getMoveDelay());
+    },
+    clear() {
+      this.boardContext.clearRect(0, 0, this.boardSizePx, this.boardSizePx)
     },
     drawCell({ x, y }) {
       this.boardContext.rect(
