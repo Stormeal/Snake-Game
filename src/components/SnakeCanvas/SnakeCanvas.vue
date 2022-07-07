@@ -28,15 +28,15 @@ export default {
     this.resetSnake();
   },
   watch: {
-    isPlaying(value){
+    isPlaying(value) {
       console.log(value);
       // Subscribes to the value of isPlaying.
       // Used for managing of game state.
       if (value) {
         this.resetSnake();
-        this.snakeMovement()
+        this.snakeMovement();
       }
-    }
+    },
   },
   methods: {
     resetSnake() {
@@ -63,6 +63,10 @@ export default {
       );
       this.boardContext.fillStyle = "black";
       this.boardContext.fill();
+    },
+    getMoveDelay() {
+      // Return a value we can use in milliseconds
+      return (2 / Number(this.speed)) * 1000;
     },
   },
 };
