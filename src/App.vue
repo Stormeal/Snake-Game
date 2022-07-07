@@ -20,6 +20,7 @@
       :boardSize="boardSize"
       :speed="speed"
       :isPlaying="isPlaying"
+      :stop="stop"
     ></SnakeCanvas>
     <div>Scores: {{ scores || 0 }}</div>
     <button id="play-btn" @click="isPlaying ? stop() : start()">
