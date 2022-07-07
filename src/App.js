@@ -1,11 +1,11 @@
-import SnakeCanvas from "./components/SnakeCanvas/SnakeCanvas.vue"
-import TestComponent from "./components/Test/TestComponent.vue"
+import SnakeCanvas from "./components/SnakeCanvas/SnakeCanvas.vue";
+import TestComponent from "./components/Test/TestComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     SnakeCanvas,
-    TestComponent
+    TestComponent,
   },
   data() {
     return {
@@ -13,7 +13,16 @@ export default {
       boardSize: 20,
       speed: 10,
       scores: 0,
-      isPlaying: false
-    }
-  }
-}
+      isPlaying: false,
+    };
+  },
+  methods: {
+    start() {
+      this.isPlaying = true;
+    },
+
+    stop() {
+      this.isPlaying = false;
+    },
+  },
+};

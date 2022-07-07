@@ -19,9 +19,10 @@
       :cellSize="cellSize"
       :boardSize="boardSize"
       :speed="speed"
+      :isPlaying="isPlaying"
     ></SnakeCanvas>
     <div>Scores: {{ scores || 0 }}</div>
-    <button id="play-btn">
+    <button id="play-btn" v-on:click="isPlaying ? stop() : start()">
       {{ isPlaying ? "Stop" : "Play"}}
     </button>
   </div>
