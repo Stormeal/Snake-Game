@@ -22,7 +22,7 @@
       :isPlaying="isPlaying"
     ></SnakeCanvas>
     <div>Scores: {{ scores || 0 }}</div>
-    <button id="play-btn" v-on:click="isPlaying ? stop() : start()">
+    <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? "Stop" : "Play"}}
     </button>
   </div>
